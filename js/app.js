@@ -1,9 +1,11 @@
+/* Enemy class */
 class Enemy {
 	constructor(x=250, y=250, speed=50){
 		this.x = x;
 		this.y = y;
 		this.speed = speed;
 		this.sprite = 'images/enemy-bug.png';
+		
         this.width= 101;
 		this.height= 170;
 	}
@@ -11,6 +13,7 @@ class Enemy {
 	update(dt){
 		this.x += dt*this.speed*1.15;
 		checkCollision();
+		//Checking for walls collision
 		if ((this.x+this.width) >= 505) {
 			this.x = 0;
 		}
@@ -20,20 +23,21 @@ class Enemy {
 	}
 }
 
-/* Player */
+/* Player class */
 class Player {
 	constructor(x=250, y=250, speed=50){
 		this.x = x;
 		this.y = y;
 		this.speed = speed;
-		this.sprite = 'images/char-boy.png';
+		this.sprite = 'images/char-princess-girl.png';
 	}
-	update(dt=1){
-
+	update(dt){
+	
 	}
 	render(){
 		ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 	}
+	// Handle key press | player movement control
 	handleInput(keyType){
 		if(keyType == "up"){
 			this.y-= this.speed;
@@ -72,9 +76,13 @@ function checkCollision(){
 let allEnemies = []
 let player = new Player(200, 390, 85);
 
-let enemy = new Enemy(0, 225, 50);
+let enemy1 = new Enemy(0, 225, 50);
+let enemy2 = new Enemy(0, 145, 50);
+let enemy3 = new Enemy(0, 65, 50);
 
-allEnemies.push(enemy);
+allEnemies.push(enemy1);
+allEnemies.push(enemy2);
+allEnemies.push(enemy3);
 
 document.addEventListener('keyup', function(e) {
     var allowedKeys = {
