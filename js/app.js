@@ -4,9 +4,15 @@ class Enemy {
 		this.y = y;
 		this.speed = speed;
 		this.sprite = 'images/enemy-bug.png';
+        this.width= 101;
+		this.height= 170;
 	}
+	
 	update(dt){
-		this.x += dt*this.speed*2;
+		this.x += dt*this.speed*1.15;
+		if ((this.x+this.width) >= 505) {
+			this.x = 0;
+		}
 	}
 	render(){
 		ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
@@ -39,7 +45,6 @@ class Player {
 		}
 	}
 }
-
 /* Main */
 let allEnemies = []
 let player = new Player(200, 390, 85);
