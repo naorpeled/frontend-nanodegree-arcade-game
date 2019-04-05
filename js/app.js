@@ -10,6 +10,7 @@ class Enemy {
 	
 	update(dt){
 		this.x += dt*this.speed*1.15;
+		checkCollision();
 		if ((this.x+this.width) >= 505) {
 			this.x = 0;
 		}
@@ -28,7 +29,7 @@ class Player {
 		this.sprite = 'images/char-boy.png';
 	}
 	update(dt=1){
-	
+
 	}
 	render(){
 		ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
@@ -43,6 +44,28 @@ class Player {
 		}else if(keyType=="down"){
 			this.y+= this.speed;
 		}
+
+	}
+}
+/* Collision check - checks if the player has collided with an enemy */
+function checkCollision(){
+	allEnemies.forEach((enemy)=>{
+		if(player.x >= (enemy.x-65) &&
+		player.x<=(enemy.x+65) &&
+		player.y>=(enemy.y-50)&&
+		player.y<=(enemy.y+50)){
+			player.x = 200;
+			player.y = 390;
+		}
+	});
+	if(player.x<-25 || player.x>=500
+	|| player.y>=440){
+		player.x = 200;
+		player.y = 390;
+	}else if(player.y<= -50){
+		console.log('You won!');
+		player.x = 200;
+		player.y = 390;
 	}
 }
 /* Main */
