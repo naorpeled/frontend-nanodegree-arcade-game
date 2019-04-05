@@ -13,8 +13,11 @@ Once you reach the water and pass them you win.
 
 #### Controls:
 upArrowKey - Moves the player one block up
+
 downArrowKey - Moves the player one block down
+
 rightArrowKey - Moves the player one block right
+
 leftArrowKey - Moves the player one block left
 
 
