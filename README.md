@@ -1,20 +1,25 @@
 # Classic Arcade Game Clone Project
-
-## Table of Contents
-
-- [Instructions](#instructions)
-- [Contributing](#contributing)
+In this repository you will find my solution to the Arcade Game project from Udacity's Front End Nanodegree. This project explores basic concepts regarding Javascript, Object Oriented Programming by initializing and controlling entities within a small arcade game.
 
 ## Instructions
+### How to run the game?
+1. Download the folder (through ```git clone https://github.com/naorpeled/frontend-nanodegree-arcade-game.git``` or by downloading the zip file through the reposity on *Github*)
+2. Open ```index.html``` and start playing :D
 
-Use this [rubric](https://review.udacity.com/#!/rubrics/15/view) for self-checking your submission.
+### How to play
+Move on the game board and try to get through the water while not colliding with the enemy bugs.
+If you collide with one of them you automatically get teleported to the beginning spawn point.
+Once you reach the water and pass them you win.
 
-Make sure the functions you write are **object-oriented** - either class functions (like `Player` and `Enemy`) or class prototype functions such as `Enemy.prototype.checkCollisions`. Also make sure that the keyword `this` is used appropriately within your class and class prototype functions to refer to the object the function is called upon.
+#### Controls:
+upArrowKey - Moves the player one block up
+downArrowKey - Moves the player one block down
+rightArrowKey - Moves the player one block right
+leftArrowKey - Moves the player one block left
 
-Your **README.md** file should be updated with instructions on both how to 1. Run and 2. Play your arcade game.
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
-
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+## TODO:
+- Add a winning sound/notification
+- Add game difficulty once the player has passed the water
+- Add a score system
+- Add a timer
